@@ -1,0 +1,59 @@
+status: example_worksheet_draft
+purpose: understand_the_market_for_ai_products_in_china
+product_categories:
+  - ai_hardware
+  - ai_software
+  - agent_skills
+  - workflows
+  - prompt_packs
+  - agent_systems
+  - platforms
+category_scheme: extensible_and_allowing_multiple_categories_per_offering
+skill_product_definition: packaged_ai_capabilities_and_agent_based_offerings
+requested_sources:
+  - name: Rednote
+    url: https://www.rednote.com/
+    requirement: to_be_selected_for_the_task
+  - name: Bilibili
+    url: https://www.bilibili.com/
+    requirement: to_be_selected_for_the_task
+suggested_research_questions:
+  status: proposed_for_the_example
+  questions:
+    - what_types_of_products_are_being_offered
+    - which_user_groups_and_needs_the_products_address
+    - how_competing_offerings_and_prices_differ
+    - what_demand_signals_and_reported_problems_appear_in_the_collected_sample
+    - what_unmet_needs_or_opportunities_are_supported_by_the_evidence
+    - which_claims_or_market_estimates_cannot_be_established_from_this_sample
+collection:
+  initial_content: accessible_text_and_available_captions_or_transcripts
+  fallback: notify_and_try_browser_automation_or_a_simple_crawler
+  record_missing_required_sources: true
+evidence:
+  distinguish:
+    - source_claims
+    - reported_experiences
+    - opinions
+    - calculated_results
+    - identifiable_promotions
+    - unknown_sponsorship
+  include_source_dates_and_analysis_methods: true
+  separate_sample_patterns_from_wider_market_inferences: true
+deliverables:
+  core:
+    - browser_report
+    - pdf_report
+  optional:
+    - original_summary_video_derived_from_the_report
+budget:
+  time: to_be_supplied_before_execution
+  cost: to_be_supplied_before_execution
+  strategy: plan_the_complete_deliverable_and_reserve_resources_for_reporting
+remaining_task_inputs:
+  - priority_product_subcategories
+  - date_range
+  - allowed_and_required_sources
+  - output_language
+  - research_depth_and_completion_criteria
+  - optional_video_selection_and_budget

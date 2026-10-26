@@ -1,0 +1,221 @@
+status: shared_design_confirmed
+confirmation: requester_accepted_the_consolidated_design_in_Q23
+purpose: >-
+  Collect, analyze, process, and write information according to the
+  requester's needs across subject areas.
+scope:
+  domain: general_information_work
+  finance: example_use_case
+  initial_delivery: local_operator_assisted
+  hosted_online_service_initially: false
+agreed_workflow:
+  demand_capture:
+    interface: editable_worksheet_and_conversation
+    purpose: help_requesters_understand_and_express_what_they_want_to_do
+    worksheet_fields:
+      - purpose
+      - questions
+      - scope
+      - value_criteria
+      - processing_needs
+      - deliverable_requirements
+      - research_depth
+      - time_and_cost_limits
+      - completion_criteria
+    clarification:
+      - suggest_possible_purposes_for_vague_requests
+      - ask_questions_that_determine_direction
+      - make_minor_defaults_visible
+    initial_assistance: operator_can_help_complete_the_worksheet
+  memory:
+    - save_and_reuse_needs_and_worksheets
+    - keep_task_requirements_separate_from_lasting_preferences
+    - let_requesters_choose_updates_to_lasting_preferences
+  execution_modes:
+    - guided_with_intermediate_findings_and_redirection
+    - automatic_for_clear_requests
+  task_planning:
+    principles:
+      - plan_scope_depth_schedule_and_cost_before_execution
+      - fit_the_requested_deliverable_to_the_task_budget
+      - reserve_effort_for_analysis_and_final_report_generation
+      - deliver_a_report_with_clear_coverage_limits
+    budget_pressure_behavior: reduce_lower_priority_research_and_complete_the_report
+  content_analysis:
+    initial_scope:
+      - accessible_text
+      - available_captions_and_transcripts
+    full_audio_and_visual_analysis: later_extension
+  extensibility:
+    initial_mechanism: python_modules_with_declared_purpose_inputs_and_outputs
+    supported_roles:
+      - source_connector
+      - processor
+      - analyzer
+      - report_renderer
+    future_growth: additional_custom_functions
+  services:
+    discovery_catalogue: https://github.com/public-apis/public-apis
+    task_execution: enabled_connectors
+    selection: optional_user_choice
+    selected_sources: allowed_sources_with_an_optional_must_use_requirement
+    selection_purpose: prioritize_information_quality_and_task_relevance
+    browsing:
+      - detailed_service_descriptions
+      - keyword_search
+    description_fields:
+      - information_provided
+      - suitable_tasks
+      - required_inputs
+      - example_outputs
+      - coverage
+      - authentication
+      - costs_and_limits
+      - connector_readiness
+      - supported_content_and_acquisition_methods
+    ordinary_requester_experience: ready_to_use_services_without_api_configuration
+    custom_setup_role: operator_or_developer
+    custom_sources:
+      - requester_supplied_websites
+      - requester_supplied_apis
+    required_source_access_failure:
+      - notify_the_requester
+      - attempt_browser_automation_or_a_simple_crawler_as_suitable
+      - record_the_acquisition_method_and_any_remaining_access_gap
+  evidence:
+    - supporting_sources_and_dates
+    - calculation_methods
+    - visible_disagreements_and_missing_information
+    - conclusions_qualified_by_available_evidence
+    - distinguish_source_claims_experiences_opinions_and_calculated_results
+    - label_identifiable_promotions_and_keep_unknown_sponsorship_unknown
+    - treat_likes_and_views_as_context_instead_of_proof_of_reliability
+  reports:
+    - browser_report
+    - short_visual_overview
+    - expandable_evidence_and_methods
+    - downloadable_pdf
+    - task_appropriate_charts_tables_formulas_and_written_sections
+    - suitable_for_delivery_to_clients
+  promotional_video:
+    requested_interest: optional_video_from_results_to_promote_the_system
+    format: original_summary_video_derived_from_the_report
+    content:
+      - findings
+      - charts
+      - captions
+      - narration
+    budget: included_explicitly_when_requested
+validation_cases:
+  financial_research:
+    request: selected_stocks_and_bonds_and_related_securities
+    concrete_instruments_and_goal: unresolved
+  product_information:
+    purpose: learn_the_market
+    region: china
+    areas_of_interest:
+      - ai_hardware
+      - ai_software
+      - agent_skills
+      - workflows
+      - prompt_packs
+      - agent_systems
+      - platforms
+    category_scheme: extensible_and_allowing_multiple_categories_per_offering
+    sources:
+      - https://www.rednote.com/
+      - https://www.bilibili.com/
+    skill_product_definition: packaged_ai_capabilities_and_agent_based_offerings
+    platform_access_and_content_coverage: documented_scope_checked_general_content_access_unverified
+source_feasibility:
+  rednote:
+    documented_scope:
+      - merchant_authorization_and_commerce_operations
+    general_public_note_search_text_comments_and_reviews: not_verified
+    references:
+      - https://open.xiaohongshu.com/document/developer/file/17
+      - https://school.xiaohongshu.com/en/open/product/summary.html
+      - https://openaccount.xiaohongshu.com/docs/scope
+  bilibili:
+    documented_scope:
+      - authorized_creators_own_submission_metadata
+    general_public_video_search_comments_subtitles_and_media_access: not_verified
+    references:
+      - https://openhome.bilibili.com/doc/4/d9554788-dcef-f139-6217-b487d41c3826
+  interpretation: >-
+    Documented merchant or creator access does not establish platform-wide
+    public-content access. Unverified capabilities remain open questions,
+    rather than claims that no access method exists.
+reporting_recommendation:
+  status: proposed_after_primary_source_review
+  local_workbench: streamlit
+  interactive_charts: plotly
+  document_export: quarto
+  shared_content:
+    - findings
+    - structured_datasets
+    - chart_specifications
+    - evidence_references
+    - methods_and_limitations
+  report_structure:
+    - overview_related_to_the_requesters_goal
+    - task_appropriate_analysis_and_visuals
+    - supporting_evidence
+    - disagreements_missing_data_and_uncertainty
+    - methods_and_sources_appendix
+  pdf_adaptation:
+    - static_labeled_charts_from_the_same_saved_result
+    - relevant_expandable_evidence_in_an_appendix
+  alternatives_considered:
+    - jinja_and_weasyprint_for_custom_html_css_pdf_layout
+  references:
+    - https://github.com/streamlit/streamlit
+    - https://github.com/plotly/plotly.py
+    - https://github.com/quarto-dev/quarto-cli
+    - https://github.com/Kozea/WeasyPrint
+    - https://quarto.org/docs/authoring/citations.html
+    - https://quarto.org/docs/output-formats/pdf-basics.html
+    - https://plotly.com/python/static-image-export/
+proposed_implementation_defaults:
+  local_workspace:
+    organization: one_local_folder_per_information_task
+    artifacts:
+      - versioned_worksheet_and_task_plan
+      - source_records_and_acquired_content
+      - structured_datasets
+      - findings_and_evidence_references
+      - generated_reports_and_usage_summary
+    worksheet_revision: preserve_history_and_refresh_affected_work
+  execution:
+    shared_pipeline_for_guided_and_automatic_modes: true
+    stages:
+      - clarify_need
+      - prepare_worksheet
+      - select_services
+      - plan_scope_schedule_and_budget
+      - acquire_and_record_sources
+      - extract_process_and_analyze
+      - assess_evidence_and_form_conclusions
+      - render_and_check_deliverables
+    extensions: registered_python_modules_with_input_and_output_contracts
+  service_readiness:
+    - discovery_only
+    - configured
+    - tested_for_declared_capabilities
+  reporting:
+    source_of_truth: shared_structured_findings_data_and_evidence
+    renderers:
+      - streamlit_and_plotly_for_local_interaction
+      - quarto_for_html_and_pdf_reports
+    video: optional_output_module_using_the_completed_report
+open_design_decisions: []
+implementation_questions_to_verify:
+  - tested_social_platform_access_and_fallback_coverage
+  - actual_provider_rates_and_stage_duration_estimates
+  - chosen_renderer_installation_and_export_fidelity
+task_runtime_inputs:
+  - requester_goal_and_priority_questions
+  - date_range_and_source_choices
+  - time_and_cost_allowances
+  - required_outputs_language_and_depth
+  - particular_financial_instruments_for_the_financial_validation_case

@@ -1,5 +1,10 @@
 status: shared_design_confirmed
 confirmation: requester_accepted_the_consolidated_design_in_Q23
+specification:
+  url: https://github.com/Moskataza/storm/issues/1
+  release: R1
+  testing_seams: requester_approved
+ticket_proposal: ten_vertical_slices_awaiting_requester_review
 purpose: >-
   Collect, analyze, process, and write information according to the
   requester's needs across subject areas.

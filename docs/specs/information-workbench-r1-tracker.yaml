@@ -1,0 +1,30 @@
+repository: Moskataza/storm
+design_commit: f76730c
+specification:
+  local_document: docs/specs/information-workbench-r1.md
+  number: 1
+  url: https://github.com/Moskataza/storm/issues/1
+  label: ready-for-agent
+  state: published
+  testing_seams: requester_approved
+ticket_proposal:
+  index: docs/tickets/information-workbench-r1/README.md
+  state: awaiting_requester_approval
+  count: 10
+  issues_published: false
+  dependencies:
+    T01: []
+    T02: [T01]
+    T03: [T01]
+    T04: [T03]
+    T05: [T04]
+    T06: [T04]
+    T07: [T01]
+    T08: [T02, T03, T07]
+    T09: [T03, T07]
+    T10: [T05, T06, T08, T09]
+verification_work:
+  - platform_access
+  - provider_costs
+  - export_fidelity
+next_action: review_then_publish_approved_ticket_slices_and_blocking_edges

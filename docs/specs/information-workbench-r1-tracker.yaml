@@ -133,7 +133,7 @@ verification_work:
 - platform_access
 - provider_costs
 - export_fidelity
-next_action: await_explicit_implementation_instruction_then_begin_T01_issue_2
+next_action: T01_implemented_await_instruction_for_T02_T03_or_T07
 approved_planning_commit: '3963284'
 publication_verification:
   approved_ticket_bodies_match: true
@@ -142,9 +142,22 @@ publication_verification:
   all_native_blocking_relationships_verified: true
   parent_body_and_state_unchanged: true
 implementation:
-  status: not_started
-  authorized: false
+  status: T01_implemented
+  authorized: true
+  authorized_scope: T01_issue_2_only
+  continuation: docs/handoffs/information-workbench-t01.md
+  verification:
+    application_tests_passed: 7
+    typecheck: passed
+    formatting: passed
+    standards_review_findings: 0
+    specification_review_findings: 0
+    remote_ci: not_run_unpushed
   next_frontier:
-  - T01
+  - T02
+  - T03
+  - T07
   next_frontier_issues:
-  - 2
+  - 3
+  - 4
+  - 8

@@ -13,4 +13,5 @@ jobs:
       - uses: actions/setup-python@v2
       - uses: psf/black@stable
         with:
-          black_args: "knowledge_storm --check"
+          black_args: "knowledge_storm frontend/workbench tests --check"
+          version: "24.8.0"

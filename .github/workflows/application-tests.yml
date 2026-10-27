@@ -1,0 +1,35 @@
+name: Application tests
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  application:
+    runs-on: ubuntu-latest
+    env:
+      HF_HUB_OFFLINE: "1"
+      LITELLM_LOCAL_MODEL_COST_MAP: "True"
+      STREAMLIT_BROWSER_GATHER_USAGE_STATS: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-workbench.txt
+            requirements-dev.txt
+      - name: Install CPU-only tensor dependency
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install application and development dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Install browser for local smoke test
+        run: python -m playwright install --with-deps chromium
+      - name: Typecheck the workbench
+        run: python -m mypy
+      - name: Application and browser tests (no live credentials)
+        run: python -m pytest -q

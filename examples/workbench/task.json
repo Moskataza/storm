@@ -1,0 +1,32 @@
+{
+  "worksheet": {
+    "title": "Local notes / 本地笔记",
+    "purpose": "Understand what the supplied local-notes example demonstrates",
+    "priority_questions": ["What can the example do?"],
+    "scope": "Only the supplied fictional example; no live product research",
+    "value_criteria": ["Every finding has inspectable supplied evidence"],
+    "completion_criteria": ["Reopen a short report with its original evidence"],
+    "processing_needs": "Quote supplied text; no calculations",
+    "audience": "Local operator",
+    "language": "English / 中文 (original evidence language)",
+    "requested_outputs": ["browser"],
+    "selected_sources": [{"service_id": "fixture", "required": true}],
+    "time_allowance_minutes": 5,
+    "cost_allowance": 1,
+    "cost_currency": "USD"
+  },
+  "evidence": [
+    {
+      "source_id": "local-notes-example",
+      "service_id": "fixture",
+      "origin": "supplied:local-notes-example",
+      "title": "Fictional local-notes example",
+      "content": "The example can save and reopen local notes. 本地笔记可以保存并重新打开。",
+      "retrieved_at": "2026-10-01T12:00:00Z",
+      "published_at": "2026-09-30T00:00:00Z",
+      "coverage": ["text"],
+      "acquisition_method": "supplied_fixture",
+      "acquisition_outcome": "success"
+    }
+  ]
+}

@@ -18,13 +18,13 @@ R1 is a single-operator local browser application with online source access. It 
 
 - Editable worksheets, guided clarification, task history, reusable needs, and explicitly saved preferences.
 - Optional/required service selection using keyword search and detailed capability descriptions. The public-apis catalogue supplies discovery entries; enabled connectors provide executable services.
-- A working configured web-search service, HTTP page acquisition, a bounded browser/crawler fallback, at least one verified public-API integration, and operator-configured custom website/API sources.
+- Individually maintained connectors behind a provider-neutral contract: SEC EDGAR public submissions/XBRL as the first live reference, HTTP page acquisition, bounded browser/crawler fallback, and operator-configured custom website/API sources. LLM-directed collection calls approved tools; LLM-assisted service discovery does not make unverified integrations executable. Additional search/API services may be enabled when verified and installed; a second live provider is not an R1 requirement.
 - Accessible text, structured data, and available captions/transcripts. Every acquisition records what content was actually obtained.
 - Python extension contracts for connectors, processors, analyzers, and renderers, demonstrated by a custom source and processing function.
 - Planning across the complete requested deliverable, including acquisition, analysis, writing, visuals, rendering, and checks. Research breadth and depth fit the budget and preserve resources for delivery.
 - Evidence-linked findings, quantitative tables/charts when supported, and explicit disagreements, uncertainty, missing data, and access gaps.
 - Interactive browser reports and downloadable HTML/PDF artifacts derived from the same saved report content. Chinese and English inputs and text must survive collection, display, and export.
-- Two reproducible cross-domain examples: financial information work and Chinese AI-market research spanning hardware, software, agent skills, workflows, prompt packs, agent systems, and platforms.
+- Two reproducible cross-domain examples: frozen, deterministic, non-advisory financial information work and Chinese AI-market research spanning hardware, software, agent skills, workflows, prompt packs, agent systems, and platforms.
 
 The AI-market example studies product categories, target users, observed needs, competing offerings, pricing, sample demand signals, and supported opportunities. Rednote and Bilibili are requested sources whose actual access capabilities must be tested and honestly described. Sample observations must not be presented as representative market statistics without supporting evidence.
 
@@ -85,10 +85,10 @@ Each criterion is observable through the public task workflow, persisted artifac
 | --- | --- |
 | AC01 | Starting from a vague request, the workbench proposes relevant directions and records the chosen purpose and priority questions in an editable worksheet; purpose changes are not silently invented. |
 | AC02 | The operator can create, save, close, reopen, and revise a worksheet containing purpose, scope, value/completion criteria, processing needs, selected sources, audience, language, outputs, time allowance, and cost allowance. |
-| AC03 | Reusing a task preserves its history and creates an identifiable new revision; a task-local interest does not change saved preferences until explicitly selected for reuse. |
+| AC03 | Reusing a task preserves its history and creates an immutable new revision; rerun starts at the earliest changed stage and unchanged captures retain stable IDs; a task-local interest does not change saved preferences until explicitly selected for reuse. |
 | AC04 | Keyword search returns service descriptions with declared capabilities, coverage, input/output examples, authentication, costs/limits, supported content, and readiness. Discovery-only entries cannot be executed as configured connectors. |
-| AC05 | A run uses only permitted services; required services are tracked separately. Excluded services are never invoked, and an unavailable required source remains visibly unmet in the delivered report. |
-| AC06 | An operator configures one custom website/API source and one custom Python processing module; a task uses their output in a visible table or conclusion with provenance. Invalid configuration returns an actionable validation error. |
+| AC05 | The LLM collects through approved web/API/browser tools and verified connectors, never unknown endpoints; discovered services remain non-executable until verified and installed. A run uses only permitted services; required services are tracked separately. Excluded services are never invoked, and an unavailable required source remains visibly unmet in the delivered report. |
+| AC06 | Only operator-installed trusted modules in the storm Conda environment are executable; task-time installation and unknown-code execution are rejected. An operator configures one custom website/API source and one custom Python processing module; a task uses their output in a visible table or conclusion with provenance. Invalid configuration returns an actionable validation error. |
 | AC07 | Before execution, the plan shows scope, stage allocations, expected requests/model usage, price assumptions or unknowns, timing estimates, acquisition fallback limits, and a delivery reserve. A plan below the minimum feasible delivery effort proposes a smaller scope before running. |
 | AC08 | With controlled prices and a fake clock, acquisition and concurrent work cannot consume the reporting reserve. When extra research would exceed the plan, lower-priority expansion is skipped and a report is produced with coverage limits; a cost-triggered pause is not the normal outcome. |
 | AC09 | Planned versus measured elapsed time, request counts, token usage, and estimated/known charges appear in the task record. Unknown charges are labeled unknown, not zero, and estimation is distinguished from actual provider billing. |
@@ -105,7 +105,7 @@ Each criterion is observable through the public task workflow, persisted artifac
 | AC20 | The existing topic-to-article entry point still works with a deterministic injected retriever/model configuration, preserving backward compatibility. |
 | AC21 | Financial and Chinese AI-market fixture tasks run through the same workflow without domain-specific forks. AI categories include hardware, software, agent skills, workflows, prompt packs, agent systems, and platforms, with overlapping/extensible classification. |
 | AC22 | Release evidence contains dated platform access probes, configured-provider cost assumptions plus a measured sample run, and an HTML/PDF fidelity check. Each capability is reported as supported, limited, unavailable, or unverified with observed reasons. |
-| AC23 | At least one configured search service, one normally accessible web source, and one catalogue-derived public API have an observed end-to-end retrieval-to-report demonstration. Both Rednote and Bilibili have documented probe outcomes; unsupported platform-wide access is never advertised. |
+| AC23 | SEC EDGAR and one normally accessible web source each have an observed end-to-end retrieval-to-report demonstration. Catalogue discovery is tested independently; no second live API or dedicated search provider is required. Both Rednote and Bilibili have dated public HTTP/Playwright probe outcomes for metadata, accessible text, and available captions/transcripts; no login, private data, anti-bot bypass, or platform-wide access is included. |
 | AC24 | Export/render failure is shown as a failed deliverable with preserved report content and an actionable retry; it is not mislabeled as successful PDF delivery. |
 
 ## Implementation Decisions
@@ -114,16 +114,16 @@ Each criterion is observable through the public task workflow, persisted artifac
 - Use the Demand worksheet as shared task context throughout collection, processing, analysis, and writing. Preserve the rationale that a topic alone cannot express useful outcomes.
 - Add a local task-workflow facade around the existing STORM runner and its injected retriever/model capabilities. Keep existing topic-oriented use compatible. Reuse existing stage timing, token usage, request counts, callbacks, and bounded runner controls.
 - Separate the local browser interface from task execution. Guided and Automatic modes invoke the same workflow; guided review changes interaction checkpoints, not the evidence or reporting rules.
-- Persist one local workspace per task with identifiable worksheet/plan/report revisions, source snapshots, structured datasets, evidence/finding references, generated outputs, and usage. Refresh affected work after edits rather than silently mixing revisions.
+- Persist one local workspace per task with identifiable worksheet/plan/report revisions, source snapshots, structured datasets, evidence/finding references, generated outputs, and usage. Revisions are immutable. Rerun from the earliest stage whose inputs changed and reuse unchanged source captures by stable identity. Rendering-only edits do not repeat acquisition or analysis.
 - Treat catalogue entries and executable integrations as different readiness states. Import a versioned public-apis discovery snapshot and seed executable services with verified capabilities. A catalogue URL is not an API contract.
-- Make ordinary source selection a task decision. Custom website/API integration and Python module registration are operator/developer activities. Registered capabilities declare purpose, inputs, outputs, requirements, and estimated resource use.
+- Make ordinary source selection a task decision. Custom website/API integration and Python module registration are operator/developer activities. Registered capabilities declare purpose, inputs, outputs, requirements, and estimated resource use. Operators install trusted modules and dependencies into the storm Conda environment before tasks; tasks cannot install packages or execute untrusted code.
 - Acquire through the appropriate configured API or HTTP path. Use a simple crawler for suitable static pages and Playwright for suitable rendered pages. Record notifications, attempts, content outcomes, and remaining gaps. Browser rendering does not imply platform-wide search, transcript availability, or guaranteed recovery of an unavailable page.
 - Retain original captures and structured evidence outside STORM's snippet representation. Pass stable evidence references and relevant text into generation. Repeated URLs, record identities, and captures must not erase provenance or imply independent corroboration.
 - Evaluate usefulness against worksheet value criteria and describe evidence quality with inspectable reasons. Do not invent an absolute truth score. Source labels and extraction/transcription uncertainty are retained through synthesis.
 - Execute numeric transformations in registered deterministic processors, record their inputs/methods, and use those results for charts. Generated prose may interpret results but cannot invent the underlying numbers.
 - Plan the complete deliverable before execution, using configured provider rates and measured stage histories where available. Reserve work for synthesis, visuals, rendering, and checks before optional expansion. Bound requests, fallback attempts, timeouts, concurrency, and generation output sizes against the plan.
 - Treat time/cost as planning constraints with visible estimation uncertainty. Feasible scope is established upfront; runtime adaptation reduces lower-priority research and finishes an honest report. Unexpected provider outages or renderer failures remain visible outcomes rather than false completion claims.
-- Use a shared structured report bundle for the browser and exports. The working choice is Streamlit for local interaction, Plotly for charts, and Quarto for HTML/PDF publishing, subject to a renderer installation/fidelity check. This adds a report-export capability, not a separate analysis pass.
+- Use a versioned JSON report bundle plus referenced files for the browser and exports. Its minimum contract contains task/worksheet metadata, revision identity, findings, evidence references, structured datasets, chart specifications, methods, limitations, usage/budget, and output artifacts. Stable IDs identify task revisions, captures/evidence, findings, datasets, and artifacts; the bundle is created at the task boundary before URL-based STORM merging can lose capture identity. Use Streamlit for local interaction, Plotly for interactive charts, HTML/CSS templates for downloadable HTML, and WeasyPrint for PDF. Charts and formulas must have pre-rendered static equivalents for PDF because its renderer does not execute JavaScript. Installation, required fonts, native libraries, and static-chart tooling remain verification work. Quarto is deferred. This adds a report-export capability, not a separate analysis pass.
 - Expand relevant interactive evidence into printable appendices and render charts statically for PDF. Preserve Chinese text, original-language evidence, formulas, dates, units, and citations across formats.
 - Keep future original-summary-video generation behind the report-output extension contract; R1 preserves the report data it will need, but does not advertise a working video renderer.
 
@@ -147,7 +147,7 @@ The requester approved these testing seams during specification preparation.
 - Automatically implementing every public-apis entry or arbitrary user API from a URL alone.
 - Platform-wide Rednote/Bilibili indexing, exhaustive social-content collection, or guaranteed access to every post, comment, transcript, or video.
 - Full audio transcription and video-frame understanding beyond available text/captions/transcripts.
-- Original promotional-video rendering, narration generation, and video publishing in R1; these remain explicitly budgeted future output modules.
+- Quarto document publishing, original promotional-video rendering, narration generation, and video publishing in R1; these remain explicitly budgeted future output modules.
 - Unrequested scheduled monitoring and universal real-time financial feeds or comprehensive individual-bond coverage.
 - General-purpose autonomous installation/execution of unknown modules, and silently learned global preferences.
 - Complete market-size or demand estimates derived only from sampled social-media popularity, and unqualified conclusions without supporting evidence.
@@ -156,9 +156,9 @@ The requester approved these testing seams during specification preparation.
 
 ### Verification work that remains open
 
-1. **Platform access:** run dated capability probes for Rednote and Bilibili and record which search, page text, metadata, comments, and transcript capabilities actually work through each configured acquisition method. Official merchant/creator integrations do not establish general public-content access. Unsupported capabilities must remain limited/unverified.
-2. **Provider costs:** select the initial configured providers, document their current rates/quotas and model/token/request assumptions, and compare a small observed run with the estimate. Do not assert free access, current prices, or a billing guarantee without verification.
-3. **Export fidelity:** verify installation and rendering of the chosen report stack with Chinese/English text, formulas, citations, charts, long tables, and appendices. If the renderer fails the check, record the demonstrated issue and evaluate an alternative adapter against the same acceptance fixture.
+1. **Platform access:** run dated public capability probes for Rednote and Bilibili covering metadata, accessible text, and available captions/transcripts through HTTP/Playwright. No login, private data, anti-bot bypass, or platform-wide access claim is included. T05 provides deterministic probe interfaces; T10 records actual platform outcomes. Official merchant/creator integrations do not establish general public-content access. Unsupported capabilities must remain limited/unverified.
+2. **Provider costs:** verify SEC EDGAR and each additionally configured provider, document their current rates/quotas and model/token/request assumptions, and compare a small observed run with the estimate. Do not assert free access, current prices, or a billing guarantee without verification.
+3. **Export fidelity:** verify installation and rendering of the chosen report stack with Chinese/English text, formulas, citations, charts, long tables, and appendices. A failed check remains an unresolved release gate; any renderer substitution is a new explicit design decision rather than an automatic technology switch.
 
 These are implementation/release checks rather than missing interview answers. They must remain visible in the tickets and release evidence. Numeric task budgets, date ranges, instruments, source selections, output language, and priorities are inputs to each real worksheet, not fixed product-wide assumptions.
 
@@ -178,6 +178,11 @@ These are implementation/release checks rather than missing interview answers. T
 - [Xiaohongshu account scopes](https://openaccount.xiaohongshu.com/docs/scope)
 - [Bilibili submission-detail API](https://openhome.bilibili.com/doc/4/d9554788-dcef-f139-6217-b487d41c3826)
 - [Playwright Python](https://playwright.dev/python/docs/library)
-- [Streamlit](https://github.com/streamlit/streamlit), [Plotly](https://github.com/plotly/plotly.py), [Quarto](https://github.com/quarto-dev/quarto-cli)
-- [Quarto PDF publishing](https://quarto.org/docs/output-formats/pdf-basics.html)
+- [Streamlit](https://github.com/streamlit/streamlit), [Plotly](https://github.com/plotly/plotly.py), [WeasyPrint](https://github.com/Kozea/WeasyPrint)
+- [WeasyPrint documentation](https://doc.courtbouillon.org/weasyprint/stable/)
+- [SEC EDGAR public APIs](https://www.sec.gov/search-filings/edgar-application-programming-interfaces)
 - [Plotly static export](https://plotly.com/python/static-image-export/)
+
+### Confirmed review resolutions
+
+The requester confirmed provider-neutral maintained connectors with SEC EDGAR as the first live reference, a local Python Streamlit/Plotly/WeasyPrint stack, a versioned JSON-plus-files bundle, immutable selective revisions, trusted preinstalled storm-Conda extensions, frozen financial fixtures, semantic export checks, bounded public platform probes, and the revised ten ticket boundaries. LLMs actively collect information by calling approved tools and may discover additional services; discovery alone does not authorize arbitrary endpoint calls. The three factual verification gates remain platform access, actual provider costs, and export fidelity. Tickets remain local drafts and implementation is not authorized by specification confirmation.

@@ -54,3 +54,24 @@ A readable presentation of research data and conclusions using charts, tables, a
 
 **AI offering**:
 A product or packaged capability examined in an AI market study, including hardware, software, agent skills, workflows, prompt packs, agent systems, and platforms. These categories can overlap and expand as the market changes.
+
+**Report bundle**:
+The revisioned task result shared by browser, PDF, and future output renderers, containing findings, evidence references, structured datasets, chart specifications, methods, limitations, usage, and output artifacts.
+
+**Task revision**:
+An immutable version of a demand worksheet and its resulting plan, evidence, analysis, and deliverables.
+
+**Trusted extension**:
+A Python connector, processor, analyzer, or renderer installed by the operator in the local `storm` Conda environment and permitted to run for information tasks.
+
+**Capability probe**:
+A dated, bounded test that records what a data service or platform can actually provide through a specified acquisition method.
+
+**Financial fixture**:
+A frozen, deterministic, non-advisory set of financial records used to test information workflows without depending on live market data.
+
+**Collection tool**:
+An approved connector, web/API client, or browser acquisition capability that an LLM may call to obtain information for an information task.
+
+**Tool-mediated collection**:
+LLM-directed information collection performed through approved collection tools with declared capabilities, provenance, and usage limits.

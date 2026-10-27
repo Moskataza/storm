@@ -10,12 +10,12 @@ An operator opens the visual report and downloads HTML and PDF versions suitable
 
 ## Acceptance criteria
 
-- [ ] Implement the shared report bundle and the selected browser/HTML/PDF renderer adapters, with rendering/checking effort charged against the delivery reserve.
+- [ ] Consume the T01 shared report bundle using Streamlit/Plotly browser display, HTML/CSS templates for HTML, and WeasyPrint for PDF, with rendering/checking effort charged against the delivery reserve.
 - [ ] Browser, HTML, and PDF agree on conclusions, key values, source references, qualifications, and report identity; export does not rerun research or analysis.
 - [ ] The fidelity fixture includes Chinese/English text, formulas, source citations, chart labels, long tables, missing data, and evidence/methods appendices.
 - [ ] Inspect rendered pages and extracted text: no missing glyphs, lost citations, clipped tables/figures, invisible qualifications, or misleading static charts. Record the renderer versions, required fonts/tools, observed results, and any limits.
 - [ ] Export failure is visible and retryable from saved report content; no broken file is marked delivered.
-- [ ] Record whether Quarto/Plotly installation and static export meet the fixture; if not, evaluate an alternative renderer against the same acceptance case before claiming readiness.
+- [ ] Check storm-Conda setup, WeasyPrint/native libraries/fonts, Plotly static-export tooling, and pre-rendered formulas against the fixed semantic fixture. No JavaScript-only content may disappear in PDF. A failed check remains a release gate; changing renderer requires an explicit decision.
 - [ ] Workflow checks compare semantic artifact content and report revisions; a browser check exercises downloads. Document the reproducible fidelity check as release evidence.
 
 ## Specification coverage

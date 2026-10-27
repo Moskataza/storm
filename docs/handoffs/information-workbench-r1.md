@@ -1,3 +1,19 @@
+# Current continuation state — confirmed review resolutions
+
+The requester confirmed the revised shared understanding and asked to continue. The current phase reconciles local design/spec/ticket documents and specification #1. No implementation or ticket publication is authorized. Earlier statements below about pending ticket-boundary approval, Quarto, catalogue-derived live API requirements, and waiting for shared understanding are historical and superseded by this section.
+
+Confirmed decisions: provider-neutral individually maintained connectors with SEC EDGAR public submissions/XBRL as first live reference; HTTP/Playwright acquisition; LLM collection through approved tools only, with service discovery kept separate from executable verified integrations; trusted modules preinstalled in storm Conda, no task-time installation; versioned JSON-plus-files report bundle with stable identities and capture provenance; immutable revisions with earliest-affected-stage recomputation and unchanged capture reuse; Streamlit/Plotly, HTML/CSS templates and WeasyPrint PDF with static chart/formula equivalents; frozen deterministic non-advisory finance fixture; fixed semantic export-fidelity threshold; bounded public platform probes without login/private data/anti-bot bypass.
+
+The requester accepted revised T01–T10 boundaries at Q35. Dependencies remain T01→T02/T03/T07, T03→T04, T04→T05/T06, T02/T03/T07→T08, T03/T07→T09, T05/T06/T08/T09→T10. T01 explicitly owns shared bundle/identity contracts. T05 owns deterministic probe interfaces; T10 owns observed Rednote/Bilibili probes, provider-cost checks and final export fidelity. T10 is a release-verification slice.
+
+Reference: https://github.com/Moskataza/storm/issues/1. Local specification: docs/specs/information-workbench-r1.md. Ticket drafts: docs/tickets/information-workbench-r1/. Design: docs/worksheets/system-design.yaml. New rationale: docs/adr/0003-r1-provider-renderer-and-report-boundaries.md and docs/adr/0004-llm-collection-through-approved-tools.md. All implementation issues remain unpublished.
+
+Next action after reconciliation: report updated specification and local drafts to requester. Keep platform access, real provider costs, and renderer installation/export fidelity as factual verification gates. Do not restart the interview or implement. No manual compaction control is available; use this record for any host-driven continuation.
+
+---
+
+## Historical record (superseded where noted above)
+
 # Information Workbench R1 continuation record
 
 ## Current phase and next action

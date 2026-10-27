@@ -18,6 +18,8 @@ An operator registers a custom website/API integration and a Python processing c
 - [ ] Add a second module in the demonstration without changing core task-workflow logic; future analyzer/renderer roles use the same registration approach.
 - [ ] Public-workflow contract tests exercise valid registration, missing credentials/configuration, malformed responses, and incompatible processor inputs.
 
+- [ ] Only operator-approved modules installed before tasks in the storm Conda environment may run. A task never installs packages, executes untrusted code, or turns an LLM-discovered endpoint into a connector without verification. Validate both successful calls and rejected requests.
+
 ## Specification coverage
 
 AC06, custom source portion of AC12, processor foundation of AC16.

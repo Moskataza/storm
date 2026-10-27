@@ -17,6 +17,8 @@ A requester reviews intermediate evidence and analysis in Guided mode, changes a
 - [ ] Guided and Automatic modes use the same execution and reporting rules; identical unchanged fixture inputs yield equivalent final findings/data.
 - [ ] A workflow test covers redirected completion and history; a browser test covers inspecting evidence, editing, and opening old/new reports.
 
+- [ ] Revisions are immutable. Compare stage inputs and rerun from the earliest changed stage; reuse unchanged captures by stable ID. A presentation-only revision rerenders without reacquiring or reanalyzing evidence.
+
 ## Specification coverage
 
 AC03 revisions, guided portion of AC10, revision consistency of AC18.

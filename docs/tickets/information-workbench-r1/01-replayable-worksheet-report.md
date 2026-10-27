@@ -19,6 +19,8 @@ Keep the initial demonstration deterministic and fixture-backed; it does not pre
 - [ ] A primary workflow test verifies worksheet-to-artifact behavior; a thin browser smoke test verifies create/run/reopen.
 - [ ] CI runs the application tests and existing formatting checks without activating package publication or requiring live credentials.
 
+- [ ] Persist the shared versioned JSON-plus-files report-bundle contract: worksheet/task metadata, revision, findings, evidence, datasets, chart specifications, methods, limitations, usage/budget, and artifacts. Preserve capture identity before STORM URL merging. Stable IDs and file references survive reopening; later slices extend this contract rather than replace it.
+
 ## Specification coverage
 
 AC02, AC12 foundation, AC17 foundation, AC20.

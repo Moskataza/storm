@@ -15,13 +15,13 @@ A worksheet selects websites as sources. The task acquires suitable static conte
 - [ ] HTTP errors, empty content, exhausted fallbacks, and inaccessible pages remain visible; they are not silently dropped or represented as successful full-content retrieval.
 - [ ] Requests, crawl extent, browser attempts, timeouts, and concurrency fit the task plan and delivery reserve.
 - [ ] Available text/captions/transcripts are distinguished from metadata-only captures; a title alone does not establish a video's spoken claims.
-- [ ] Run dated Rednote and Bilibili capability probes, recording each attempted method and supported/limited/unavailable/unverified status for search, text, metadata, comments, and transcripts. Do not claim platform-wide coverage from a single successful page.
-- [ ] At least one normally accessible real web source completes acquisition-to-report; failed social-platform probes still leave a demonstrable gap report and documented capability limits.
+- [ ] Provide capability-probe interfaces and deterministic fixtures for public metadata, accessible text, and available captions/transcripts. T10 owns dated Rednote/Bilibili live outcomes. Login, private data, anti-bot bypass, and platform-wide access are outside R1.
+- [ ] An accessible web fixture completes acquisition-to-report; failed probes produce gap reports. T10 verifies the normally accessible live web source.
 - [ ] Fixture workflow tests verify static success, rendered fallback, required-source failure, content coverage, and budget-bounded attempts without live platform dependencies.
 
 ## Specification coverage
 
-AC05 failures, AC11, AC12, AC13, platform-access portion of AC22, web/platform portion of AC23.
+AC05 failures, AC11, AC12, AC13, interfaces supporting platform-access AC22 and web/platform AC23; live results belong to T10.
 
 ## Blocked by
 
@@ -29,4 +29,4 @@ AC05 failures, AC11, AC12, AC13, platform-access portion of AC22, web/platform p
 
 ## Demonstration
 
-Show one rendered-page fallback success and one inaccessible required source in the same report, then present the dated Rednote/Bilibili capability records.
+Show one rendered-page fallback success and one inaccessible required source in the same report, then present the fixture capability outcomes and saved access-gap records.

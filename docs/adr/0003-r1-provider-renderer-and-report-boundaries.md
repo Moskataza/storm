@@ -1,0 +1,5 @@
+# R1 provider, renderer, and report boundaries
+
+R1 uses a provider-neutral connector contract with SEC EDGAR as the first live public-API reference for company submissions and XBRL; additional connectors are allowed when independently verified. Financial price, individual-bond, bond-fund, and Treasury-yield comparisons use a frozen deterministic non-advisory fixture so the release does not claim broader live market coverage than its providers support. The local Streamlit/Plotly application renders interactive results, while a Python HTML/CSS-to-PDF adapter (currently WeasyPrint) renders static charts from the same revisioned Report bundle; Quarto remains an alternative for later document-publishing needs.
+
+The Report bundle is the shared boundary for browser, HTML, PDF, and future output renderers. It carries task and revision metadata, findings, evidence references, structured datasets, chart specifications, methods, limitations, usage/budget, and output artifacts. A Task revision is immutable: edits rerun from the earliest changed stage and may reuse unchanged source captures by stable identity.

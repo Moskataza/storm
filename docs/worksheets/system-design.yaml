@@ -1,10 +1,10 @@
-status: shared_design_confirmed
+status: revised_shared_design_confirmed
 confirmation: requester_accepted_the_consolidated_design_in_Q23
 specification:
   url: https://github.com/Moskataza/storm/issues/1
   release: R1
   testing_seams: requester_approved
-ticket_proposal: ten_vertical_slices_awaiting_requester_review
+ticket_proposal: revised_ten_boundaries_accepted_local_drafts
 purpose: >-
   Collect, analyze, process, and write information according to the
   requester's needs across subject areas.
@@ -59,9 +59,31 @@ agreed_workflow:
       - analyzer
       - report_renderer
     future_growth: additional_custom_functions
+    trust_boundary:
+      environment: storm_conda_environment
+      installation: operator_managed
+      task_time_package_installation: prohibited
+      unknown_code_execution: excluded
+  LLM_collection:
+    authority: tool_mediated_collection
+    may:
+      - search_service_catalogue
+      - select_verified_connectors
+      - call_approved_web_api_browser_tools
+      - combine_tool_results
+    may_not:
+      - call_unknown_endpoints
+      - install_packages
+      - execute_untrusted_code
   services:
     discovery_catalogue: https://github.com/public-apis/public-apis
     task_execution: enabled_connectors
+    provider_strategy:
+      contract: provider_neutral
+      R1_reference_connector: SEC_EDGAR_public_submissions_and_XBRL
+      additional_connectors: individually_callable_when_verified_and_installed
+      LLM_discovery: recommendations_only_unverified_services_are_not_executable
+      financial_price_and_bond_comparisons: frozen_financial_fixture_in_R1
     selection: optional_user_choice
     selected_sources: allowed_sources_with_an_optional_must_use_requirement
     selection_purpose: prioritize_information_quality_and_task_relevance
@@ -152,10 +174,10 @@ source_feasibility:
     public-content access. Unverified capabilities remain open questions,
     rather than claims that no access method exists.
 reporting_recommendation:
-  status: proposed_after_primary_source_review
+  status: accepted_direction_renderer_verification_pending
   local_workbench: streamlit
   interactive_charts: plotly
-  document_export: quarto
+  document_export: weasyprint_html_css_pdf
   shared_content:
     - findings
     - structured_datasets
@@ -172,15 +194,13 @@ reporting_recommendation:
     - static_labeled_charts_from_the_same_saved_result
     - relevant_expandable_evidence_in_an_appendix
   alternatives_considered:
-    - jinja_and_weasyprint_for_custom_html_css_pdf_layout
+    - quarto_for_later_document_publishing
   references:
     - https://github.com/streamlit/streamlit
     - https://github.com/plotly/plotly.py
-    - https://github.com/quarto-dev/quarto-cli
     - https://github.com/Kozea/WeasyPrint
-    - https://quarto.org/docs/authoring/citations.html
-    - https://quarto.org/docs/output-formats/pdf-basics.html
     - https://plotly.com/python/static-image-export/
+  PDF_charts: static_SVG_or_PNG
 proposed_implementation_defaults:
   local_workspace:
     organization: one_local_folder_per_information_task
@@ -211,9 +231,76 @@ proposed_implementation_defaults:
     source_of_truth: shared_structured_findings_data_and_evidence
     renderers:
       - streamlit_and_plotly_for_local_interaction
-      - quarto_for_html_and_pdf_reports
+      - html_css_templates_for_HTML_and_weasyprint_for_PDF
     video: optional_output_module_using_the_completed_report
+report_bundle:
+  shared_by: browser_html_pdf_and_future_video_renderers
+  minimum_parts:
+    - task_and_worksheet_metadata
+    - task_revision
+    - findings
+    - evidence_references
+    - structured_datasets
+    - chart_specifications
+    - methods
+    - limitations
+    - usage_and_budget
+    - output_artifacts
+  serialization: versioned_JSON_plus_referenced_files
+  stable_ids:
+    - task_revision
+    - evidence
+    - finding
+    - dataset
+    - output_artifact
+  revision_rule: immutable_revision_rerun_from_earliest_changed_stage_reuse_unchanged_captures
+  export_fidelity_threshold:
+    - same_report_revision
+    - same_findings_and_key_values
+    - citations_and_limitations_preserved
+    - formulas_and_chinese_english_text_preserved
+    - chart_labels_and_long_tables_preserved
+    - no_missing_glyphs_or_clipped_content
+    - browser_interactivity_not_required_in_PDF
+financial_fixture:
+  status: accepted_for_R1
+  properties:
+    - frozen
+    - deterministic
+    - non_advisory
+    - stock_records
+    - individual_bond_records
+    - bond_fund_records
+    - treasury_yield_records
+    - dates_units_currency_and_source_metadata
+platform_probes:
+  status: accepted_R1_scope
+  methods:
+    - HTTP
+    - Playwright_when_needed
+  content:
+    - public_page_metadata
+    - accessible_text
+    - available_captions_or_transcripts
+  excluded:
+    - login
+    - private_data
+    - anti_bot_bypass
+    - platform_wide_access_claims
 open_design_decisions: []
+ticket_boundaries:
+  status: accepted
+  slices:
+    - workspace_and_report_bundle_foundation
+    - clarification_memory_and_multilingual_worksheet
+    - budget_planner
+    - service_catalogue_and_SEC_connector
+    - HTTP_Playwright_acquisition_and_capability_probe_interfaces
+    - trusted_custom_extensions
+    - evidence_qualified_analysis
+    - immutable_revisions_and_guided_redirection
+    - Streamlit_Plotly_WeasyPrint_outputs
+    - release_verification_and_two_domain_demonstrations
 implementation_questions_to_verify:
   - tested_social_platform_access_and_fallback_coverage
   - actual_provider_rates_and_stage_duration_estimates

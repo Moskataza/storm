@@ -1,10 +1,10 @@
 # Information Workbench R1 ticket proposal
 
-Status: awaiting requester approval of granularity and blocking edges. These are complete local drafts, not published implementation issues.
+Status: revised ticket boundaries accepted; local drafts only. Publication remains on hold. These are complete local drafts, not published implementation issues.
 
 Parent specification: [GitHub #1](https://github.com/Moskataza/storm/issues/1). The primary workflow testing seam and thin browser checks were approved by the requester before specification publication.
 
-Each ticket delivers a demonstrable vertical slice, includes observable acceptance criteria and a verification approach, and is intended to fit one fresh implementation context. Existing retrieval/model injection permits a narrow task adapter, so a separate broad prefactoring ticket is not required.
+T01–T09 deliver demonstrable vertical slices; T10 is the release-verification slice. Each implementation ticket delivers a demonstrable vertical slice, includes observable acceptance criteria and a verification approach, and is intended to fit one fresh implementation context. Existing retrieval/model injection permits a narrow task adapter, so a separate broad prefactoring ticket is not required.
 
 1. **[T01: Deliver a replayable worksheet-to-report task](01-replayable-worksheet-report.md)**
    - **Blocked by:** none.
@@ -17,10 +17,10 @@ Each ticket delivers a demonstrable vertical slice, includes observable acceptan
    - **What it delivers:** inspect a complete-delivery plan, run automatically, preserve reporting resources, and compare planned/observed usage in a completed report.
 4. **[T04: Select described services and report from a real public API](04-select-services-and-use-public-api.md)**
    - **Blocked by:** T03.
-   - **What it delivers:** browse service capabilities, select permitted/required sources, and produce an attributed report from configured search and a verified catalogue-derived API, with cost verification evidence.
+   - **What it delivers:** browse service capabilities, let the LLM call approved tools, select permitted/required sources, and report from SEC EDGAR; catalogue discovery does not authorize execution.
 5. **[T05: Acquire web evidence with browser fallback and honest access gaps](05-acquire-web-content-and-browser-fallback.md)**
    - **Blocked by:** T04.
-   - **What it delivers:** web acquisition and bounded Playwright/crawler fallback reach a report, preserving inaccessible required sources and documented Rednote/Bilibili capability probes.
+   - **What it delivers:** web acquisition and bounded Playwright/crawler fallback reach a report, preserving inaccessible required sources and deterministic capability-probe interfaces; T10 owns live platform outcomes.
 6. **[T06: Use a custom source and Python processing module in a report](06-use-custom-source-and-processing-module.md)**
    - **Blocked by:** T04.
    - **What it delivers:** operator-added source and processing capabilities produce visible, attributed report data without changing core execution.
@@ -58,4 +58,4 @@ These are minimal direct blockers: transitive prerequisites are not repeated on 
 
 ## Review before publication
 
-Confirm whether the slices are the right size, whether every direct dependency is genuinely necessary, and whether any slice should be merged or split. Once approved, publish one GitHub issue per slice, label it ready-for-agent, attach it as a sub-issue of specification #1, and set native blocking relationships with a textual fallback only if unsupported. Do not modify or close the parent specification's body.
+The requester accepted these ten boundaries at Q35 and confirmed the revised shared understanding. Do not publish or start implementation without a subsequent instruction. When publication is authorized, publish one GitHub issue per slice, label it ready-for-agent, attach it as a sub-issue of specification #1, and set native blocking relationships with a textual fallback only if unsupported. Keep parent changes synchronized with the authoritative local specification when explicitly authorized.

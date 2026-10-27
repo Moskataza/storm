@@ -1,6 +1,6 @@
 # Information Workbench R1 ticket proposal
 
-Status: revised ticket boundaries accepted; local drafts only. Publication remains on hold. These are complete local drafts, not published implementation issues.
+Status: published and verified. The requester explicitly approved commit 3963284 and authorized publication. Local files preserve the approved ticket content; GitHub uses native sub-issue and blocking relationships.
 
 Parent specification: [GitHub #1](https://github.com/Moskataza/storm/issues/1). The primary workflow testing seam and thin browser checks were approved by the requester before specification publication.
 
@@ -56,6 +56,21 @@ These are minimal direct blockers: transitive prerequisites are not repeated on 
 | AC21 | T07, T10 |
 | AC22–AC24 | T04, T05, T09, T10 |
 
-## Review before publication
+## Published references
 
-The requester accepted these ten boundaries at Q35 and confirmed the revised shared understanding. Do not publish or start implementation without a subsequent instruction. When publication is authorized, publish one GitHub issue per slice, label it ready-for-agent, attach it as a sub-issue of specification #1, and set native blocking relationships with a textual fallback only if unsupported. Keep parent changes synchronized with the authoritative local specification when explicitly authorized.
+| Draft | GitHub issue | Blocked by |
+| --- | --- | --- |
+| T01 | [#2](https://github.com/Moskataza/storm/issues/2) — Deliver a replayable worksheet-to-report task | None |
+| T02 | [#3](https://github.com/Moskataza/storm/issues/3) — Clarify vague needs and reuse saved worksheets | [#2](https://github.com/Moskataza/storm/issues/2) |
+| T03 | [#4](https://github.com/Moskataza/storm/issues/4) — Plan and finish an automatic report within its budget | [#2](https://github.com/Moskataza/storm/issues/2) |
+| T04 | [#5](https://github.com/Moskataza/storm/issues/5) — Select described services and report from a real public API | [#4](https://github.com/Moskataza/storm/issues/4) |
+| T05 | [#6](https://github.com/Moskataza/storm/issues/6) — Acquire web evidence with browser fallback and honest access gaps | [#5](https://github.com/Moskataza/storm/issues/5) |
+| T06 | [#7](https://github.com/Moskataza/storm/issues/7) — Use a custom source and Python processing module in a report | [#5](https://github.com/Moskataza/storm/issues/5) |
+| T07 | [#8](https://github.com/Moskataza/storm/issues/8) — Produce evidence-qualified analysis and trustworthy visuals | [#2](https://github.com/Moskataza/storm/issues/2) |
+| T08 | [#9](https://github.com/Moskataza/storm/issues/9) — Review and redirect a guided task without losing its history | [#3](https://github.com/Moskataza/storm/issues/3), [#4](https://github.com/Moskataza/storm/issues/4), [#8](https://github.com/Moskataza/storm/issues/8) |
+| T09 | [#10](https://github.com/Moskataza/storm/issues/10) — Deliver matching browser, HTML and PDF report artifacts | [#4](https://github.com/Moskataza/storm/issues/4), [#8](https://github.com/Moskataza/storm/issues/8) |
+| T10 | [#11](https://github.com/Moskataza/storm/issues/11) — Verify R1 and demonstrate finance and the Chinese AI market | [#6](https://github.com/Moskataza/storm/issues/6), [#7](https://github.com/Moskataza/storm/issues/7), [#9](https://github.com/Moskataza/storm/issues/9), [#10](https://github.com/Moskataza/storm/issues/10) |
+
+All ten issues are open with ready-for-agent and native parent #1. All 15 blocking edges were read back and verified. The approved bodies match publication, with textual draft blocker sections replaced by native relationships. The parent body/state were unchanged.
+
+Implementation has not started and is not authorized. Once explicitly instructed to implement, the initial frontier is T01 / #2. Keep platform access, real provider costs, and export fidelity as release verification work.

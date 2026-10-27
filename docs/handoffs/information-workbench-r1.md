@@ -1,3 +1,30 @@
+# Current continuation state — approved tickets published
+
+The requester explicitly approved the revised ten-ticket breakdown and dependencies from commit **3963284** and authorized publication through the to-tickets skill. Publication is complete: all ten issues are open, labeled ready-for-agent, attached as native sub-issues of specification #1, and connected by the 15 approved native blocking relationships. The issue bodies match the approved drafts except that textual blocker sections are represented by native edges. The parent specification body and open state were not changed.
+
+| Draft | GitHub issue | Blocked by |
+| --- | --- | --- |
+| T01 | [#2](https://github.com/Moskataza/storm/issues/2) — Deliver a replayable worksheet-to-report task | None |
+| T02 | [#3](https://github.com/Moskataza/storm/issues/3) — Clarify vague needs and reuse saved worksheets | [#2](https://github.com/Moskataza/storm/issues/2) |
+| T03 | [#4](https://github.com/Moskataza/storm/issues/4) — Plan and finish an automatic report within its budget | [#2](https://github.com/Moskataza/storm/issues/2) |
+| T04 | [#5](https://github.com/Moskataza/storm/issues/5) — Select described services and report from a real public API | [#4](https://github.com/Moskataza/storm/issues/4) |
+| T05 | [#6](https://github.com/Moskataza/storm/issues/6) — Acquire web evidence with browser fallback and honest access gaps | [#5](https://github.com/Moskataza/storm/issues/5) |
+| T06 | [#7](https://github.com/Moskataza/storm/issues/7) — Use a custom source and Python processing module in a report | [#5](https://github.com/Moskataza/storm/issues/5) |
+| T07 | [#8](https://github.com/Moskataza/storm/issues/8) — Produce evidence-qualified analysis and trustworthy visuals | [#2](https://github.com/Moskataza/storm/issues/2) |
+| T08 | [#9](https://github.com/Moskataza/storm/issues/9) — Review and redirect a guided task without losing its history | [#3](https://github.com/Moskataza/storm/issues/3), [#4](https://github.com/Moskataza/storm/issues/4), [#8](https://github.com/Moskataza/storm/issues/8) |
+| T09 | [#10](https://github.com/Moskataza/storm/issues/10) — Deliver matching browser, HTML and PDF report artifacts | [#4](https://github.com/Moskataza/storm/issues/4), [#8](https://github.com/Moskataza/storm/issues/8) |
+| T10 | [#11](https://github.com/Moskataza/storm/issues/11) — Verify R1 and demonstrate finance and the Chinese AI market | [#6](https://github.com/Moskataza/storm/issues/6), [#7](https://github.com/Moskataza/storm/issues/7), [#9](https://github.com/Moskataza/storm/issues/9), [#10](https://github.com/Moskataza/storm/issues/10) |
+
+Authoritative manifest: docs/specs/information-workbench-r1-tracker.yaml. Ticket index: docs/tickets/information-workbench-r1/README.md. Specification: https://github.com/Moskataza/storm/issues/1 and docs/specs/information-workbench-r1.md.
+
+**Implementation has not started and remains explicitly unauthorized.** No issue was claimed or assigned. Next action: wait for an explicit implementation instruction; then T01 / https://github.com/Moskataza/storm/issues/2 is the only initial unblocked slice. Publishing ready-for-agent issues does not authorize starting them.
+
+Preserve the confirmed general-purpose design and rationale below. Outstanding release checks remain actual provider rates/usage, dated public Rednote/Bilibili access probes, and WeasyPrint/Plotly/Chinese-font/formula/table export fidelity. T05 supplies deterministic capability interfaces; T10 owns observed platform outcomes and release evidence. Do not restart the design interview.
+
+The following sections are historical snapshots. Earlier instructions about waiting for ticket approval or publication are superseded by this section. No manual compaction control is exposed; this continuation record preserves context for host-driven compaction.
+
+---
+
 # Current continuation state — confirmed review resolutions
 
 The requester confirmed the revised shared understanding and asked to continue. The current phase reconciles local design/spec/ticket documents and specification #1. No implementation or ticket publication is authorized. Earlier statements below about pending ticket-boundary approval, Quarto, catalogue-derived live API requirements, and waiting for shared understanding are historical and superseded by this section.

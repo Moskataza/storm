@@ -10,9 +10,9 @@ specification:
   revision: confirmed_review_resolutions
 ticket_proposal:
   index: docs/tickets/information-workbench-r1/README.md
-  state: revised_boundaries_accepted_publication_on_hold
+  state: published_and_verified
   count: 10
-  issues_published: false
+  issues_published: true
   dependencies:
     T01: []
     T02:
@@ -39,8 +39,112 @@ ticket_proposal:
     - T06
     - T08
     - T09
+  parent_number: 1
+  relationship_type: native_sub_issues_and_native_blocking
+  label: ready-for-agent
+  native_blocking_relationships: 15
+  issues:
+    T01:
+      number: 2
+      url: https://github.com/Moskataza/storm/issues/2
+      database_id: 6053939730
+      title: 'T01: Deliver a replayable worksheet-to-report task'
+      local_document: docs/tickets/information-workbench-r1/01-replayable-worksheet-report.md
+      blocked_by: []
+    T02:
+      number: 3
+      url: https://github.com/Moskataza/storm/issues/3
+      database_id: 6053946321
+      title: 'T02: Clarify vague needs and reuse saved worksheets'
+      local_document: docs/tickets/information-workbench-r1/02-clarify-and-reuse-needs.md
+      blocked_by:
+      - 2
+    T03:
+      number: 4
+      url: https://github.com/Moskataza/storm/issues/4
+      database_id: 6053947832
+      title: 'T03: Plan and finish an automatic report within its budget'
+      local_document: docs/tickets/information-workbench-r1/03-plan-complete-delivery-within-budget.md
+      blocked_by:
+      - 2
+    T04:
+      number: 5
+      url: https://github.com/Moskataza/storm/issues/5
+      database_id: 6053949699
+      title: 'T04: Select described services and report from a real public API'
+      local_document: docs/tickets/information-workbench-r1/04-select-services-and-use-public-api.md
+      blocked_by:
+      - 4
+    T05:
+      number: 6
+      url: https://github.com/Moskataza/storm/issues/6
+      database_id: 6053952510
+      title: 'T05: Acquire web evidence with browser fallback and honest access gaps'
+      local_document: docs/tickets/information-workbench-r1/05-acquire-web-content-and-browser-fallback.md
+      blocked_by:
+      - 5
+    T06:
+      number: 7
+      url: https://github.com/Moskataza/storm/issues/7
+      database_id: 6053954580
+      title: 'T06: Use a custom source and Python processing module in a report'
+      local_document: docs/tickets/information-workbench-r1/06-use-custom-source-and-processing-module.md
+      blocked_by:
+      - 5
+    T07:
+      number: 8
+      url: https://github.com/Moskataza/storm/issues/8
+      database_id: 6053956664
+      title: 'T07: Produce evidence-qualified analysis and trustworthy visuals'
+      local_document: docs/tickets/information-workbench-r1/07-evidence-qualified-analysis-and-visuals.md
+      blocked_by:
+      - 2
+    T08:
+      number: 9
+      url: https://github.com/Moskataza/storm/issues/9
+      database_id: 6053959786
+      title: 'T08: Review and redirect a guided task without losing its history'
+      local_document: docs/tickets/information-workbench-r1/08-review-and-redirect-guided-task.md
+      blocked_by:
+      - 3
+      - 4
+      - 8
+    T09:
+      number: 10
+      url: https://github.com/Moskataza/storm/issues/10
+      database_id: 6053962086
+      title: 'T09: Deliver matching browser, HTML and PDF report artifacts'
+      local_document: docs/tickets/information-workbench-r1/09-deliver-browser-html-pdf-report-pack.md
+      blocked_by:
+      - 4
+      - 8
+    T10:
+      number: 11
+      url: https://github.com/Moskataza/storm/issues/11
+      database_id: 6053965351
+      title: 'T10: Verify R1 and demonstrate finance and the Chinese AI market'
+      local_document: docs/tickets/information-workbench-r1/10-demonstrate-release-across-two-domains.md
+      blocked_by:
+      - 6
+      - 7
+      - 9
+      - 10
 verification_work:
 - platform_access
 - provider_costs
 - export_fidelity
-next_action: review_reconciled_documents_no_ticket_publication_or_implementation
+next_action: await_explicit_implementation_instruction_then_begin_T01_issue_2
+approved_planning_commit: '3963284'
+publication_verification:
+  approved_ticket_bodies_match: true
+  all_tickets_open_and_ready_for_agent: true
+  all_native_subissues_verified: true
+  all_native_blocking_relationships_verified: true
+  parent_body_and_state_unchanged: true
+implementation:
+  status: not_started
+  authorized: false
+  next_frontier:
+  - T01
+  next_frontier_issues:
+  - 2

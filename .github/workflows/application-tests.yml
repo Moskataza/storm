@@ -8,7 +8,8 @@ on:
 
 jobs:
   application:
-    runs-on: ubuntu-latest
+    # Keep the runner within the OS versions supported by pinned Playwright.
+    runs-on: ubuntu-24.04
     env:
       HF_HUB_OFFLINE: "1"
       LITELLM_LOCAL_MODEL_COST_MAP: "True"
